@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estudiantes",
+  "info": {
+    "singularName": "estudiante",
+    "pluralName": "estudiantes",
+    "displayName": "Estudiante"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "identificacion": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "telefono": {
+      "type": "string",
+      "required": true
+    },
+    "acudiente": {
+      "type": "string",
+      "required": true
+    },
+    "contacto_acudiente": {
+      "type": "string",
+      "required": true
+    },
+    "programa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::programa.programa",
+      "inversedBy": "estudiantes"
+    },
+    "modalidad": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modalidad.modalidad",
+      "inversedBy": "estudiantes"
+    }
+  }
+}

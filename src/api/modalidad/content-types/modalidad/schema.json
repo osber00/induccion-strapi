@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modalidads",
+  "info": {
+    "singularName": "modalidad",
+    "pluralName": "modalidads",
+    "displayName": "Modalidad"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
+      "required": true
+    },
+    "estudiantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::estudiante.estudiante",
+      "mappedBy": "modalidad"
+    }
+  }
+}
